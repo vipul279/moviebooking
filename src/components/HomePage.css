@@ -100,7 +100,6 @@ a:hover {
 
   .moviesgrid img {
       max-width: 100%;
-      height: auto;
       margin-bottom: 10px;
   }
 
@@ -109,7 +108,7 @@ a:hover {
   }
 
   .moviesgrid p {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
   }
 }
 
@@ -127,9 +126,7 @@ a:hover {
       padding: 10px;
   }
 
-  .moviesgrid h3 {
-      font-size: 1rem;
-  }
+  
 
   .moviesgrid p {
       font-size: 0.85rem;

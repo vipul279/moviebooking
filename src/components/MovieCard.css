@@ -1,0 +1,17 @@
+/* Default style */
+.movie-card {
+    height: 490px;
+    transition: height 0.3s ease; /* Smooth height adjustment */
+  }
+  
+
+  /* For very small screens like phones under 480px */
+  @media screen and (max-width: 480px) {
+    .movie-card {
+      height: 570px; /* Smaller height */
+    }
+    h1{
+        font-size: 25px;
+    }
+  }
+  
