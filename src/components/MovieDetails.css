@@ -111,6 +111,9 @@
 }
 
 @media (max-width: 375px) {
+  .movie-details img{
+    width: 300px;
+  }
   .movie-details h1 {
       font-size: 1.8rem;
       margin-bottom: 10px;
