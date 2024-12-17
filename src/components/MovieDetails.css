@@ -112,7 +112,7 @@
 
 @media (max-width: 375px) {
   .movie-details img{
-    height: 500px;
+    height: 600px;
   }
   .movie-details h1 {
       font-size: 1.8rem;
