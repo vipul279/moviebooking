@@ -25,8 +25,10 @@ const MovieBookingForm = () => {
   };
 
   useEffect(() => {
-    fetchMovieDetails();
-  }, [movieId]);
+    if (movieId) {
+      fetchMovieDetails();
+    }
+  }, [movieId]); // Add movieId as the dependency
 
   const handleFormSubmit = (e) => {
     if (!username || !usermail || !usermobile) {

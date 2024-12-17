@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useCallback } from "react";
 import { useParams } from "react-router-dom";
 import {Link} from 'react-router-dom'
 
@@ -9,20 +9,18 @@ const MovieDetails = () => {
   const { movieId } = useParams(); 
   const [movie, setMovie] = useState(null);
 
-  const fetchMovieDetails = async () => {
+  const fetchMovieDetails = useCallback(async () => {
     try {
       const response = await fetch(
         `https://www.omdbapi.com/?i=${movieId}&apikey=47515223`
       );
       const data = await response.json();
-      
       setMovie(data);
-      
     } catch {
-      console.error("Error in fetching ");
+      console.error("Error in fetching movie details");
     }
-  };
-
+  }, [movieId]); // movieId is a dependency because it is used inside the fetch URL
+  
   useEffect(() => {
     fetchMovieDetails();
   }, [fetchMovieDetails]);

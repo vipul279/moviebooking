@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useCallback } from "react";
 import MovieCard from "./MovieCard";
 import './HomePage.css'
 
@@ -25,7 +25,7 @@ const HomePage = () => {
     
   ];
 
-  const fetchMovies = async () => {
+  const fetchMovies = useCallback(async () => {
     try {
       const movieData = await Promise.all(
         MovieTitles.map(async (title) => {
@@ -40,8 +40,8 @@ const HomePage = () => {
     } catch (error) {
       console.error("Failed to fetch movies:", error);
     }
-  };
-
+  }, [MovieTitles]); // Add dependencies if used inside fetchMovies
+ 
   useEffect(() => {
     fetchMovies();
   }, [fetchMovies]);
