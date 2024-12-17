@@ -42,7 +42,7 @@ const HomePage = () => {
     } catch (error) {
       console.error("Failed to fetch movies:", error);
     }
-  }, [MovieTitles]); // Add dependencies if used inside fetchMovies
+  }, []); // Add dependencies if used inside fetchMovies
  
   useEffect(() => {
     fetchMovies();

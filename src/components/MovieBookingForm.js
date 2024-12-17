@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import './MovieBookingForm.css';
 
@@ -11,7 +11,7 @@ const MovieBookingForm = () => {
   const { movieId } = useParams();
   console.log({ movieId });
 
-  const fetchMovieDetails = async () => {
+  const fetchMovieDetails = useCallback(async () => {
     try {
       const response = await fetch(
         `https://www.omdbapi.com/?i=${movieId}&apikey=47515223`
@@ -22,13 +22,13 @@ const MovieBookingForm = () => {
     } catch (error) {
       console.error("Error in fetching movie details:", error);
     }
-  };
+  }, [movieId]); // Dependency only on movieId
 
   useEffect(() => {
     if (movieId) {
       fetchMovieDetails();
     }
-  }, [movieId, fetchMovieDetails]); // Add movieId as the dependency
+  }, [movieId, fetchMovieDetails]);
 
   const handleFormSubmit = (e) => {
     if (!username || !usermail || !usermobile) {
