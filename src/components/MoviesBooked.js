@@ -4,7 +4,7 @@ import './MoviesBooked.css'
 
 const MoviesBooked = () => {
 
-  const {movieId,movieTitle,username,usermail,usermobile}=useParams();
+  const {movieId,username,usermail,usermobile}=useParams();
 
   const [movie, setMovie] = useState(null);
     console.log({ movieId });
