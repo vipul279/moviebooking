@@ -25,7 +25,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     fetchMovieDetails();
-  }, []);
+  }, [fetchMovieDetails]);
 
   if (!movie) {
     return <div>Loading...</div>;

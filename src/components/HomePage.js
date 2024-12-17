@@ -44,7 +44,7 @@ const HomePage = () => {
 
   useEffect(() => {
     fetchMovies();
-  }, []);
+  }, [fetchMovies]);
 
   return (
     <>
