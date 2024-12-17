@@ -1,29 +1,31 @@
 import React, { useState, useEffect,useCallback } from "react";
 import MovieCard from "./MovieCard";
-import './HomePage.css'
+import './HomePage.css';
+
+const MovieTitles = [
+  "The Dark Knight",
+  "Shutter Island",
+  "Kishkindha Kaandam",
+  "The GodFather",
+  "Joker",
+  "Maharaja",
+  "Inception",
+  "Andhadhun",
+  "Predestination",
+  "Stree",
+  "Fight Club",
+  "Old Boy",
+  "Interstellar",
+  "The Matrix",
+  "The Shawshank Redemption",
+  "Se7en",
+  
+  
+];
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
-  const MovieTitles = [
-    "The Dark Knight",
-    "Shutter Island",
-    "Kishkindha Kaandam",
-    "The GodFather",
-    "Joker",
-    "Maharaja",
-    "Inception",
-    "Andhadhun",
-    "Predestination",
-    "Stree",
-    "Fight Club",
-    "Old Boy",
-    "Interstellar",
-    "The Matrix",
-    "The Shawshank Redemption",
-    "Se7en",
-    
-    
-  ];
+  
 
   const fetchMovies = useCallback(async () => {
     try {

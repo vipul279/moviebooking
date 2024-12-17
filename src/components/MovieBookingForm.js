@@ -28,7 +28,7 @@ const MovieBookingForm = () => {
     if (movieId) {
       fetchMovieDetails();
     }
-  }, [movieId]); // Add movieId as the dependency
+  }, [movieId, fetchMovieDetails]); // Add movieId as the dependency
 
   const handleFormSubmit = (e) => {
     if (!username || !usermail || !usermobile) {
