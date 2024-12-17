@@ -1,0 +1,136 @@
+/* Base Styles */
+.container {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  height: auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  text-align: center;
+}
+
+.all-details {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.movie-details h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.movie-details img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 350px;
+  margin-bottom: 20px;
+}
+
+.movie-details p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.movie-details p strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.movie-details button {
+  background-color: #e74c3c;
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px; /* Rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+  width: 200px; /* Fixed width for consistency */
+}
+
+.movie-details button:hover {
+  background-color: #c0392b;
+}
+
+.movie-details button:active {
+  background-color: #b30000;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+      height: auto; /* Adjust for smaller screens */
+  }
+
+  .movie-details {
+      padding: 20px;
+  }
+
+  .movie-details h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+  }
+
+  .movie-details p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+  }
+
+  .movie-details button {
+      font-size: 1.1rem;
+      padding: 10px 20px;
+  }
+
+  .all-details {
+      grid-template-columns: 1fr; /* Stack details for smaller screens */
+  }
+}
+
+@media (max-width: 375px) {
+  .movie-details h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      width: 80%;
+      margin-top: 20px;
+  }
+
+  .movie-details p {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+  }
+
+  .movie-details button {
+      font-size: 1rem;
+      padding: 8px 15px;
+      width: 100%; /* Full-width button */
+  }
+
+  .container {
+      height: auto; /* Adjust for smaller screens */
+      padding-bottom: 50px;
+  }
+}
